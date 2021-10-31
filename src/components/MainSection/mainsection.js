@@ -34,6 +34,11 @@ color: #1b7;
 font-weight:600;
 text-transform: uppercase;
 text-align:center;
+
+@media screen and (max-width:468px){
+    font-size: 35px;
+}
+
 `
 const SearchContainer=styled.div`
 position: relative;
@@ -42,6 +47,12 @@ height:3.2rem;
 background: #010606;
 border-radius: 20px;
 padding:5px 40px ;
+
+
+@media screen and (max-width:468px){
+   box-sizing:border-box;
+   margin: 0px 20px;
+}
 
 `
 
@@ -59,28 +70,13 @@ font-size: 1.4rem ;
 text-indent:1rem;
 transition: all 0.35s;
 
+@media screen and (max-width:468px){
+    width:13rem;
+}
 
-
-/* &:focus + span{
-    transform:translateY(-2.8rem);
-    background:transparent;
-    color:#1b7;
-    font-size: 17px;
-} */
 `
 
-// const Lable=styled.span`
-//   position: absolute;
-//   top:50%; 
-//   left:3.2rem ; 
-//   transform:translateY(-50%); 
-//   color:#888;
-//   padding: 0.25rem 0.5rem;
-//   pointer-events:none;
-//   font-size:20px;
-//   transition: all 0.35s;
-  
-//  `
+
 
 const HeadingSectionWrapper=styled.div`
 width:100%;

@@ -1,5 +1,7 @@
-import React from 'react'
+import {React,useState} from 'react'
 import styled from 'styled-components'
+import {CopyToClipboard} from 'react-copy-to-clipboard'
+
 
 const EmojiContainer=styled.div`
 width:150px;
@@ -12,9 +14,18 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 
+@media screen and (max-width:468px){
+    width: 120px;
+    height: 150px;
+}
+
 `
 const Emo=styled.span`
 font-size:50px;
+
+@media screen and (max-width:468px){
+    font-size:40px
+}
 `
 
 const Button=styled.button`
@@ -38,12 +49,15 @@ text-transform: uppercase;
 `
 
 const Emoji = ({symbol}) => {
+    const [copyText,setcopyText]=useState('copy')
     return (
         <>
            <EmojiContainer>
                <Emo>{symbol}</Emo>
-               <Button>Copy</Button>
-           </EmojiContainer>
+               <CopyToClipboard text={symbol}>
+               <Button onClick={()=>setcopyText('Copied')}>{copyText}</Button>
+               </CopyToClipboard>
+              </EmojiContainer>
         </>
     )
 }
